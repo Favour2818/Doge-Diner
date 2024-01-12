@@ -1,6 +1,6 @@
 <div class="top">
   <a routerLink="/">
-    <button class="home">Continnue Shoppig</button>
+    <button class="home">Continue Shopping</button>
   </a>
   <h1 class="title">Your Shopping cart</h1>
   <button (click)="openPayment()" class="checkOut">Check out</button>
@@ -20,13 +20,14 @@
       </div>
 
       <div>
-        <select #quantitySelect (change)="changeQuantity(cartItem, quantitySelect.value)">
+        <!-- <select >
           <option>1</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>
           <option>5</option>
-        </select>
+        </select> -->
+        <input type="number" min="0">
       </div>
 
       <div>
