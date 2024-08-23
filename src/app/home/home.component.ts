@@ -29,4 +29,8 @@ export class HomeComponent implements OnInit {
 
   }
 
+  onSearchChange(term: any) {
+    this.searchTerm = term;
+  }
+
 }

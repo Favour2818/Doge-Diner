@@ -11,7 +11,7 @@
         </h3>
     </div>
 </div>
-<app-search></app-search>
+<app-search (searchChange)="onSearchChange($event)"></app-search>
 <!-- <hr> -->
 <div>
 
@@ -21,11 +21,11 @@
     <ul>
         <li *ngFor="let food of foods |searchFilter: searchTerm">
             <a routerLink="/food/{{food.id}}">
-                <img src="{{food.imageUrl}}" alt="" style="height: 15rem;">
+                <img src="{{food.imageUrl}}" alt="" style="height: 12rem;">
 
                 <div class="content">
                     <div class="name">
-                        <h6 style=font-size:0.7rem;>{{food.name}}</h6>
+                        <h6 style=font-size:1rem;>{{food.name}}</h6>
                     </div>
 
                     <span class="favourite {{food.favorite?'':'not'}}">❤</span>

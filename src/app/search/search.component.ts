@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 //activated routes reads from the route while router is useful for writing into the route
 @Component({
@@ -7,8 +7,8 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-
-  searchTerm:String = "";
+  searchTerm: string = ''
+  @Output() searchChange: EventEmitter<string> = new EventEmitter<string>();
   constructor(private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
@@ -19,9 +19,7 @@ export class SearchComponent implements OnInit {
   }
 
   Search():void{
-    if(this.searchTerm)
-    this.router.navigateByUrl('/search/' + this.searchTerm)
-
+    this.searchChange.emit(this.searchTerm)
   }
 
 }
