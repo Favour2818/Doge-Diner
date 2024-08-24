@@ -13,16 +13,8 @@
     </div>
 
     <div class="rating">
-      <star-rating
-        [value]="food.stars"
-        [totalstars]="5"
-        checkedcolor="orange"
-        uncheckedcolor="black"
-        size="30px"
-        [readonly]="true">
-      </star-rating>
     </div>
-
+    ng serve --o
     <div class="origins">
       <span *ngFor="let origin of food.origins">
         {{origin}}
